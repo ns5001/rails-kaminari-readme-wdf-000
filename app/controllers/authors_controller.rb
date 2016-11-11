@@ -4,7 +4,7 @@ class AuthorsController < ApplicationController
   end
 
   def index
-    @authors = Author.all
+    @posts = Post.order(created_at: :desc).page(params[:page])
   end
 
   def edit
